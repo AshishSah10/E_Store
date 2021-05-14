@@ -1,0 +1,12 @@
+.categories-items{
+    display: flex;
+    flex-direction: row;
+}
+
+button{
+    margin: 16px;
+    .selected{
+        background: aqua;
+        
+    }
+}

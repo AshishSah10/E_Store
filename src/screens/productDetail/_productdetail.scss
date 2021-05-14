@@ -1,0 +1,15 @@
+.product-detail-container{
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 500px;
+    width: 900px;
+    margin-top: 50px;
+    margin-left: 200px;
+    .product-info{
+        display: flex;
+        flex-direction: column;
+        justify-content: center;
+        align-items: center;
+    }
+}

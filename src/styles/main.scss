@@ -1,0 +1,17 @@
+// components
+  // Input
+@import "../components/input/input";
+ // Avatar
+@import "../components/avatar/avatar.scss";
+ // Card
+@import "../components/card/card";
+
+// complex-components
+ //Header
+@import "../components/complex_components/header/header.scss";
+
+//screes
+  // home-page
+@import "../screens/home/home.scss";
+  // product-detail-page
+@import "../screens/productDetail/productdetail";
