@@ -29,13 +29,13 @@ const Header = () => {
         setSearchList(newSearchList)
     }
     const handleSearchInput = (searchedKey) => {
-        setSearchKeyword(searchedKey.trim())
+        setSearchKeyword(searchedKey)
         setSearchedProduct([])
         if(searchedKey.trim() === "" ) return;
     
         let newSearchedProduct = []
         for(let i = 0; i < searchList.length; i++){
-            if(searchList[i].keyword.toLowerCase().includes(searchedKey.trim().toLowerCase())){
+            if(searchList[i].keyword.toLowerCase().includes(searchedKey.toLowerCase())){
                 newSearchedProduct.push(searchList[i])
             }
         }
