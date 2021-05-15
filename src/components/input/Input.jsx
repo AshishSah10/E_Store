@@ -1,7 +1,10 @@
-const Input = ({type="text", name, value, onChange=() => {}, onFocus= () => {}, placeholder=""}) => {
+const Input = ({children={},type="text", name, value, onMouseLeave=() => {}, onChange=() => {}, onFocus= () => {}, placeholder="", onBlur=()=>{}}) => {
     return (
-        <input type={type} className="search-input" name={name} placeholder={placeholder} onFocus={onFocus} value={value} onChange={onChange} />
-    )
+        <div onMouseLeave={onMouseLeave}>
+            <input type={type} className="search-input" name={name} placeholder={placeholder}  onFocus={onFocus} value={value} onChange={onChange} />
+            {children}
+        </div>
+        )
 }
 
 export default Input;

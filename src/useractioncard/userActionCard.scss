@@ -1,0 +1,18 @@
+.user-action-card-container{
+    position: fixed;
+    right: 65px;
+    display: flex;
+    flex-direction: column;
+    border: 1px solid black;
+    justify-content: center;
+    padding: 0px;
+    margin: 0px;
+    .user-action{
+        border: 1px solid black;
+        padding: 4px;
+        cursor: pointer;
+        &:hover{
+            background-color: darken($color: bisque, $amount: 0.8);
+        }
+    }
+}

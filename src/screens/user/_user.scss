@@ -1,4 +1,4 @@
-.product-detail-container{
+.user-detail-container{
     display: flex;
     justify-content: center;
     align-items: center;
@@ -6,13 +6,13 @@
     width: 900px;
     margin-top: 50px;
     margin-left: 200px;
-    .product-image{
+    .user-image{
         border-right: 3px solid rgb(202, 128, 17);
         img{
             margin-right: 24px;
         }
     }
-    .product-info{
+    .user-info{
         display: flex;
         margin: 24px;
         flex-direction: column;
