@@ -17,7 +17,7 @@ const Header = () => {
     const [isAvatarActionCardVisible, setAvatarActionCardVisibility] = useState(false)
     const [isSearchedProductListVisible, setSearchedProdctListVisibility] = useState(false);
 
-    const [cartItems, setCartItems] = useContext(CartContext)
+    const [cartItems] = useContext(CartContext)
     
     const handleSearchedProductClicked = ({id, title}) => {
         setSearchKeyword(title)
