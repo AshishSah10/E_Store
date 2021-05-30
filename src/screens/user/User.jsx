@@ -8,7 +8,7 @@ const User = ({user={}}) => {
     return(
         <div className="user-detail-container">
             <div className="user-image">
-                <img src={image} width="200px" height="200px" alt="User-Image"/>
+                <img src={image} width="200px" height="200px" alt="UserImage"/>
             </div>
             <div className="user-info">
                 <div><b>Name: </b>{name}</div>

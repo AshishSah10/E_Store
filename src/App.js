@@ -1,4 +1,4 @@
-import logo from './logo.svg';
+// import logo from './logo.svg';
 import './App.css';
 import "./styles/main.scss";
 import { Route, Switch } from 'react-router';
@@ -8,24 +8,24 @@ import Header from './components/complex_components/header/Header';
 import Cart from './screens/cart/Cart';
 import User from './screens/user/User';
 import Logout from './screens/logout/Logout';
+import { createContext, useState } from 'react';
 
-
+export const CartContext = createContext(0);
 
 function App() {
-  const initializeCart = () => {
-    sessionStorage.setItem("countCartProduct",0)
-  }
-  initializeCart()
+  const [cartItems, setCartItems] = useState([]);
   return (
     <div className="App">
-      <Header/>
-      <Switch>
-        <Route exact path="/home" component={Home}/>
-        <Route exact path="/cart" component={Cart}/>
-        <Route exact path="/user" component={User}/>
-        <Route exact path="/logout" component={Logout}/>
-        <Route exact path="/product/:id" component={ProductDetail}/>
-      </Switch>
+      <CartContext.Provider value={[cartItems, setCartItems]}>
+        <Header/>
+        <Switch>
+          <Route exact path="/home" component={Home}/>
+          <Route exact path="/cart" component={Cart}/>
+          <Route exact path="/user" component={User}/>
+          <Route exact path="/logout" component={Logout}/>
+          <Route exact path="/product/:id" component={ProductDetail}/>
+        </Switch>
+      </CartContext.Provider>
     </div>
   );
 }

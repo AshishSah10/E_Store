@@ -1,13 +1,13 @@
-import { useEffect, useState } from "react";
+import { useContext, useEffect, useState } from "react";
 import Avatar from "../../avatar/Avatar";
 import Input from "../../input/Input"
 import {FiShoppingCart} from "react-icons/fi"
 import {AiOutlineHome} from "react-icons/ai"
 import { useHistory } from "react-router";
-import ActionCard from "../actioncard/ActionCard";
+//import ActionCard from "../actioncard/ActionCard";
 import UserActionCard from "../../../useractioncard/UserActionCard";
 
-
+import {CartContext} from "../../../App.js"
 
 const Header = () => {
     const history = useHistory();
@@ -16,7 +16,8 @@ const Header = () => {
     const [searchedProduct, setSearchedProduct] = useState([]);
     const [isAvatarActionCardVisible, setAvatarActionCardVisibility] = useState(false)
     const [isSearchedProductListVisible, setSearchedProdctListVisibility] = useState(false);
-    const [countCartProduct, setCountCartProduct] = useState(0);
+
+    const [cartItems, setCartItems] = useContext(CartContext)
     
     const handleSearchedProductClicked = ({id, title}) => {
         setSearchKeyword(title)
@@ -73,10 +74,10 @@ const Header = () => {
         setSearchedProduct(newSearchedProduct)
         setSearchedProdctListVisibility(true)
     }
-    const handleUserAvatarClick = () => {
+    // const handleUserAvatarClick = () => {
 
-    }
-    const appImage = "./logo.svg"
+    // }
+    //const appImage = "./logo.svg"
     const user = {
         name: "Alena Walker",
         image: "https://reqres.in/img/faces/7-image.jpg"
@@ -91,7 +92,7 @@ const Header = () => {
             </div>
             </Input>
             <div>
-                <span className="icon-value">{sessionStorage.getItem("countCartProduct")}</span>
+                <span className="icon-value">{cartItems.length}</span>
                 <FiShoppingCart className="cart-icon" onClick={() => {history.push("/cart")}}/>
                 <Avatar image={user.image} custom_avatarContainer_class="avatarContainerClass" onMouseLeave={()=> setAvatarActionCardVisibility(false) } onMouseOver={() => setAvatarActionCardVisibility(true)} >
                     {isAvatarActionCardVisible && <UserActionCard/>}
