@@ -24,7 +24,7 @@ const CategoriesList = () => {
         //console.log(items)
     }
     useEffect(() => fetchAllCategoriesFromApi(),[])
-    useEffect(() => fetchAllItemsByCategory(),[selectedCategory])
+    useEffect(() => fetchAllItemsByCategory())
     
     return(
         <div className="categories-container">
